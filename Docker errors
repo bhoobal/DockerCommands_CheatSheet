@@ -18,3 +18,25 @@ failed to register layer: re-exec error: exit status 1: output: BackupWrite \\?\
 fc79d6aa5af73f8454e8ed2e90de6c0bdcec25ddcf9296b4a37c06cf0ee9\UtilityVM\Files\Windows\WinSxS\ManifestCache\6a44e17753079b
 14_blobs.bin: There is not enough space on the disk.
 
+Docker service isnt running
+
+
+PS C:\Users\Administrator> docker pull microsoft/nanoserver
+Using default tag: latest
+Warning: failed to get default registry endpoint from daemon (error during connect: Get http://%2F%2F.%2Fpipe%2Fdocker_e
+ngine/v1.25/info: open //./pipe/docker_engine: The system cannot find the file specified.). Using system default: https:
+//index.docker.io/v1/
+error during connect: Post http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.25/images/create?fromImage=microsoft%2Fnanoserver&ta
+g=latest: open //./pipe/docker_engine: The system cannot find the file specified.
+PS C:\Users\Administrator> docker version
+Client:
+ Version:      1.12.2-cs2-ws-beta
+ API version:  1.25
+ Go version:   go1.7.1
+ Git commit:   050b611
+ Built:        Tue Oct 11 02:35:40 2016
+ OS/Arch:      windows/amd64
+error during connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.25/version: open //./pipe/docker_engine: The system c
+annot find the file specified.
+PS C:\Users\Administrator>
+
