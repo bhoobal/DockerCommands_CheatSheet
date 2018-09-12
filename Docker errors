@@ -1,0 +1,20 @@
+Docker errors
+
+PS C:\temp> docker pull microsoft/windowsservercore:1709
+1709: Pulling from microsoft/windowsservercore
+
+5847a47b8593: Pull complete
+a5b83e25f92a: Extracting [==================================================>] 858.3 MB/858.3 MB
+failed to register layer: re-exec error: exit status 1: output: invalid hard link in layer
+PS C:\temp> docker tag microsoft/windowsservercore:1709 microsoft/windowsservercore:latest
+Error response from daemon: no such id: microsoft/windowsservercore:1709
+
+PS C:\temp> docker pull microsoft/windowsservercore:latest
+latest: Pulling from microsoft/windowsservercore
+
+3889bb8d808b: Extracting [==================================================>]  4.07 GB/4.07 GB
+6e046b8e194c: Download complete
+failed to register layer: re-exec error: exit status 1: output: BackupWrite \\?\C:\ProgramData\docker\windowsfilter\2ef0
+fc79d6aa5af73f8454e8ed2e90de6c0bdcec25ddcf9296b4a37c06cf0ee9\UtilityVM\Files\Windows\WinSxS\ManifestCache\6a44e17753079b
+14_blobs.bin: There is not enough space on the disk.
+
