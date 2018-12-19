@@ -1,3 +1,33 @@
-**************************************************
-Apr 22 11.05 AM IST initial upload 
-**************************************************
+FROM microsoft/windowsservercore
+
+SHELL ["powershell"]
+
+WORKDIR /app
+
+RUN iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex 
+RUN choco install git.install --version 2.10.0 -y ; \
+    choco install nodejs-lts -y
+
+RUN git config --global url."https://".insteadOf git://
+    
+ENV HOME c:\\app
+COPY _netrc ./
+
+ARG BRANCH_NAME
+
+RUN echo $env:BRANCH_NAME
+
+RUN Copy-Item .\_netrc C:\Users\ContainerAdministrator
+COPY build.ps1 ./
+
+RUN & git clone -b $env:BRANCH_NAME -v --progress https://porject.visualstudio.com/_git/repo.app ./UI
+
+WORKDIR /app/UI
+RUN npm install -g gulp 
+RUN npm install -g yarn@0.24.6
+RUN yarn install 
+
+EXPOSE 3000
+
+CMD ["powershell", "C:\\app\\build.ps1"]
+
