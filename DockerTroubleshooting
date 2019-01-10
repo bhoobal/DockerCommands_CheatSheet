@@ -1,0 +1,8 @@
+
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /dockersamples/Dockerfile: no such file or directory
+
+This is because of Dockerfile is not present in the directory or the file name "Dockerfile" is different
+
+Docker build will work if you specify the dockerfile name
+
+FIx: Make sure the file name is Dockerfile and exists in the directory
