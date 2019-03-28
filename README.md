@@ -26,3 +26,15 @@ docker ps --all
 
 docker run --name aspnetcore_sample -it -p 8000:80 aspnetapp
 
+
+Dockerfile
+FROM ubuntu:latest
+COPY
+RUN
+
+Detached docker 
+docker run -d nginxsample:latest
+
+
+execute command in shell
+docker exec -i containerid sh
