@@ -1,7 +1,23 @@
-# DockerWorkouts
+# DockerWorkouts #
 to try out docker
 mkdir dotnet-docker
 git clone https://github.com/dotnet/dotnet-docker.git
+
+#Docker info
+$ docker info
+
+# Docker images #
+$ docker images
+$ docker rmi $(docker images)
+
+# Volumes #
+
+$ docker volume create selenium
+$ docker volume ls
+
+## Attaching volume to docker container ##
+$ docker run -it -v seleinium:/dev/sel alpine:latest
+
 
 cd dotnet-docker/
 ls -l
