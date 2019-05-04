@@ -13,6 +13,7 @@ $ docker rmi $(docker images)
 # Volumes #
 
 $ docker volume create selenium
+
 $ docker volume ls
 
 ## Attaching volume to docker container ##
