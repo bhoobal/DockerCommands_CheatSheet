@@ -55,3 +55,6 @@ docker run -d nginxsample:latest
 
 execute command in shell
 docker exec -i containerid sh
+
+#kill all the containers -filtered by names #
+docker rm $(docker ps --all --format "{{.Names}}")
