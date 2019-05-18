@@ -10,6 +10,11 @@ $ docker info
 $ docker images
 $ docker rmi $(docker images)
 
+# Docker passing build time arguments
+ARG passarg="default value passed to argument" //in docker file
+docker build #*--build-arg passarg='Arg value'*# -t alpine:1.0 .
+
+
 # Volumes #
 
 $ docker volume create selenium
