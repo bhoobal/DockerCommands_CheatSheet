@@ -56,6 +56,7 @@ RUN
 
 # download and unzip package
 RUN wget -O somearchieve.tar.gz https://s3.amazonaws.com/adminportalcodebase/sdfsdfal/MMLAsdfsdfal.tar.gz
+
 RUN tar -xzvf ./somearchieve.tar.gz
 
 Detached docker 
