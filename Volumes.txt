@@ -1,0 +1,13 @@
+Create volume --> docker volume create vol_config
+List volume -->  docker volume ls
+
+Mount volume to image
+docker run -it -v vol_config:/dev/webapp alpine:latest
+docker run -it -v vol_config:/dev/webapp1 alpine:latest
+
+Inspect volume
+
+docker inspect 4d16b81d4769
+
+Inspet container- attached with volume
+docker inspect 4d16b81d4769
