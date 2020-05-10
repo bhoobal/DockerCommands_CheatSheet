@@ -69,3 +69,13 @@ docker exec -i containerid sh
 
 # kill all the containers -filtered by names #
 docker rm $(docker ps --all --format "{{.Names}}")
+
+# Install and configre kubectl
+apt update --allow-unauthenticated
+curl -k -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+mkdir .kube
+cd .kube/
+nano config
+kubectl cluster-info
