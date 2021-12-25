@@ -29,9 +29,15 @@ Kubernetes
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# deploy and configure kubernetes dashboard on local
+URL : http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/statefulset?namespace=default
+to get token: kubectl -n kubernetes-dashboard describe secret kubernetes-dashboard
 
+default dashboard with admin previlage
 
-
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
+# -------------------------------------------------------------------------------------------------------------------------------------------------
 
 Install docker on Ubuntu
 
